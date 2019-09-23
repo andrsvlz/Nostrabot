@@ -25,7 +25,7 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Add alexa user
 RUN useradd -m alexa -d /opt/alexa && chown alexa:alexa -R /opt/alexa
-RUN chmod +x *.sh
+RUN chmod +x /opt/alexa/*.sh
 # Ports to expose
 EXPOSE 4040
 EXPOSE 5000

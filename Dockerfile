@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install requirements
 RUN apt-get update && apt-get install -y software-properties-common && \
         apt-get install -y python-pip libffi-dev python-dev libssl-dev wget \
-        supervisor unzip curl jq
+        supervisor unzip curl jq ssh expect
 
 # Get flask-ask
 RUN pip install pip==9.0.3
@@ -25,7 +25,7 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Add alexa user
 RUN useradd -m alexa -d /opt/alexa && chown alexa:alexa -R /opt/alexa
-
+RUN chmod +x *.sh
 # Ports to expose
 EXPOSE 4040
 EXPOSE 5000

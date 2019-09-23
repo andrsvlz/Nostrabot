@@ -4,9 +4,9 @@ from flask import Flask, render_template
 from flask_ask import Ask, statement, question
 app = Flask(__name__)
 ask = Ask(app, '/')
-cmd='./ssh.sh'
-cmd2='./ssh2.sh'
-cmd3='./ssh3.sh'
+cmd='./opt/alexa/ssh.sh'
+cmd2='./opt/alexa/ssh2.sh'
+cmd3='./opt/alexa/ssh3.sh'
 
 
 @ask.launch

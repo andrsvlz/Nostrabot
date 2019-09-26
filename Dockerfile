@@ -20,15 +20,14 @@ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \
         ngrok /usr/local/bin
 
 # Copy resources
-COPY src/* /opt/alexa/
+#COPY src/* /opt/alexa/
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Add alexa user
 RUN useradd -m alexa -d /opt/alexa && chown alexa:alexa -R /opt/alexa
-RUN chmod +x /opt/alexa/*.sh
+#RUN chmod +x /opt/alexa/*.sh
 # Ports to expose
 EXPOSE 4040
 EXPOSE 5000
-
 # here we go
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

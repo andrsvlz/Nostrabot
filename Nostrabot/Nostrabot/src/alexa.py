@@ -8,10 +8,6 @@ cmd='./opt/alexa/ssh.sh'
 cmd2='./opt/alexa/ssh2.sh'
 cmd3='./opt/alexa/ssh3.sh'
 cmd4='./opt/alexa/ssh4.sh'
-cmd5='./opt/alexa/ssh5.sh'
-cmd6='./opt/alexa/ssh6.sh'
-cmd7='./opt/alexa/ssh7.sh'
-
 
 @ask.launch
 
@@ -51,36 +47,17 @@ def sitioweb():
 
 @ask.intent('llamar')
 def llamar():
-    results=subprocess.Popen(cmd6)
-    return statement('enterado, procedo a realizar proceso de inventario, dentro de unos minutos le enviare un correo electronico informando el resultado de la solicitud, gracias')
-
+    results=subprocess.Popen(cmd4)
+    return statement('listo, procedo a informar a luis daniel via telefono celular')
 
 
 @ask.intent('intranet')
 def intranet():
-    results=subprocess.Popen(cmd5)
-    return statement('enterado, procedo a realizar prueba de acceso a Kiosko,  la evidencia en video la puede encontrar dentro de unos minutos en el repositorio de nostradatos')
+    return statement('enterado, procedo a realizar prueba de acceso a Kiosko')
 
 @ask.intent('tequiero')
 def tequiero():
     return statement('no, tu no me quieres, tu quieres a alexa... hmm...   de sponsor')
-
-@ask.intent('inventario')
-def inventario():
-    results=subprocess.Popen(cmd6)
-    return statement('enterado, procedo a realizar proceso, En unos segundos puedes actualizar la pagina de mosaico donde veras reflejado el inventario del proyecto comfenalco actualizado')
-
-
-
-@ask.intent('accioncritica')
-def accioncritica():
-    results=subprocess.Popen(cmd7)
-    return statement('Claro, con gusto procedo a realizar los mantenimientos preventivos')
-
-
-
-
-
 
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/expect
-eval spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no ansible@10.0.1.189
+eval spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no ansible@192.168.47.27
 #use correct prompt
 set prompt ":|#|\\\$"
 interact -o -nobuffer -re $prompt return
@@ -7,9 +7,11 @@ send "ansible\r"
 interact -o -nobuffer -re $prompt return
 send "ansible\r"
 interact -o -nobuffer -re $prompt return
-send "sh /home/ansible/playbooks/linux/llamadas/llamadas.sh 'un cordial saludo te habla alexa, se informa que en este momento se tienen problemas con el sitio web' '3173002602' \r"
+send "ansible-playbook /home/ansible/playbooks/set/inventario/t.yaml -i inventario.yaml -e \"tipo_conexion=local\" -vvvv\r"
 interact -o -nobuffer -re $prompt return
 send "exit\r"
 interact
 exit 1
+
+
 

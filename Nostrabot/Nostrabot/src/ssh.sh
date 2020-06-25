@@ -7,9 +7,8 @@ send "ansible\r"
 interact -o -nobuffer -re $prompt return
 send "ansible\r"
 interact -o -nobuffer -re $prompt return
-send "sh /home/ansible/playbooks/linux/llamadas/llamadas.sh 'un cordial saludo te habla alexa, se informa que en este momento se tienen problemas con el sitio web' '3173002602' \r"
+send "ansible-playbook playbooks/linux/notifications.yml -i 10.0.1.189, -u ansible -e 'Session_ID=2019/07/05-28' -e 'site=COP' -e 'Specification=BK_Diario_Pruebaautomatizacion' \r"
 interact -o -nobuffer -re $prompt return
 send "exit\r"
 interact
 exit 1
-
